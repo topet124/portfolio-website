@@ -1,0 +1,262 @@
+/*
+Colors used
+
+Text Color (Dark Gray): #2b2b2b;
+Primary Color (Purple): #357b70;
+Secondary Color (Orange): #e0b354;
+ */
+ :root {
+   --primary-color: #F0F8FF;
+   --secondary-color: #e0b354;
+   --button-color:white;
+   --button-background-color:#357b70;
+   --link-color:#357b70;
+   --link-visited-color:#000000;
+   --link-hover-color:#457DFB;
+   --link-active-color: #0066ff;
+   --page-footer-color:lightgray;
+   --button__secondary-background-color:#e0b354;
+   --button__secondary-color:#2b2b2b;
+   --padding:10px;
+
+ }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: 'Spectral', serif;
+  font-weight: 400;
+  font-size: 16px;
+  /* Sets the font size to 16px */
+  line-height: 1.6;
+  /* Sets the line-height to 1.6 */
+  padding: var(--padding);
+  min-height: 100vh;
+
+}
+
+a {
+  color: var(--link-color);
+  transition: color, font-size .3s ease-out;
+
+}
+
+a:visited {
+  color: var(--link-visited-color);
+
+}
+
+a:hover, a:focus {
+  /* No underlining when hovering over a link */
+  text-decoration: none;
+  color: var(--link-hover-color);
+  font-size: 20px;
+
+
+}
+
+.active__navigation a:visited {
+  /* selected link */
+  color: var(--link-active-color);
+}
+
+button,
+.button  {
+  /* overwrit es browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  background-color: var(--button-background-color);
+  color: var(--button-color);
+  text-decoration: none;
+  padding: var(--padding);
+  border-radius: 3px;
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  margin-left:10px;
+  transition: 0.8s opacity;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.7;
+}
+
+table{
+}
+
+
+.btn{
+display: flex;
+justify-content: center;
+
+
+}
+.button__secondary {
+  background-color: var(--button__secondary-background-color);
+  color: var(--button__secondary-color);
+}
+.profile__portrait {
+  width: 350px;
+  height: auto;
+  margin-right: 40px;
+  border-radius: 25%;
+}
+
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: flex-end;
+  background-color: var(--page-footer-color);
+  margin-top:10px;
+  padding: var(--padding);
+  justify-content: center;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+}
+
+#intro {
+  text-align: center;
+}
+
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: var(--padding);
+  padding-right: 20px;
+  border-bottom: solid 1px lightgray;
+  margin:10px;
+}
+
+.page-header__item {
+  flex: 0 1 200px;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+.center{
+  text-align:center;
+  font-size: 20px;
+}
+table{
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  font-size: 20px;
+}
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+/* start grid fallback */
+.grid__item {
+  display: inline-block;
+  width: 30%;
+}
+
+/* end grid fallback */
+@supports (display:grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+
+  .grid__item {
+    background-color: lightgray;
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+    padding: var(--padding);
+  }
+
+}
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+
+.suns {
+  animation: 10s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(450px, 50px);
+  }
+  to {
+    transform: translate(100px, 50px);
+  }
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}

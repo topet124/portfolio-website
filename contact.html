@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="./img/icons8-globe-earth-32.png">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300&display=swap" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="css/style.production.css">
+  <meta charset="utf-8">
+  <title> Hello World</title>
+</head>
+
+<body>
+  <header class="page-header">
+
+      <img src="./img/logo.svg" alt=" a proposed logo" class="page-header__item">
+    <nav class="page-header__item main-navigation">
+      <ul role="menubar" class="navigation-list">
+        <li role="presentation">
+          <a href="index.html" role="menuitem" class="navigation-list__item navigation-list__item--active">Home
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="about.html" role="menuitem" target="blank" class="navigation-list__item">About
+          </a>
+        </li>
+        <li class="active__navigation" role="presentation">
+          <a href="contact.html" role="menuitem" target="blank" class="navigation-list__item">Contact
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="work.html" role="menuitem" target="blank" class="navigation-list__item">Work
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <br>
+
+  <main class="center">
+    <form action="" method="post" id="contact-form">
+      <label class="standard-label" for="contact-email">Email: </label>
+      <input type="email" id="contact-email" required>
+
+      <label class="standard-label" for="contact-tel">Telephone: </label>
+      <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" id="contact-tel" required>
+
+      <label class="standard-label" for="text-area">Message: </label>
+      <textarea required maxlength="240" id="text-area"></textarea>
+      <input type="submit" value="Send message">
+    </form>
+
+    <div>
+      Temitope dev<br>
+      Köpenicker Str. 126<br>
+      10179 mikkeli<br>
+      Suomi<br>
+      <br>
+      Tel <a href="tel:+358408159029">+49 1234567</a>
+      Skype <a href="skype:hello.careerfoundry"> hello.toopet124y</a>
+      <a href="mailto:suletemitope@gmail.com">suletemitope@gmail.com</a>
+      <a href="mailto:suletemitope@gmail.com">Contact me</a>
+    </div>
+  </main>
+  <footer class="page-footer">
+      <p> You can find me on</p>
+    <div class="social-media">
+      <img src="./img/twitter.svg" alt="twitter logo">
+      <img src="./img/facebook.svg" alt="facebook logo">
+      <img src="./img/instagram.svg" alt="instagram logo">
+    </div>
+  </footer>
+  <script src="./js/tota11y.min.js"></script>
+</body>
+
+</html>
